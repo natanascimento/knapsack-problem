@@ -87,7 +87,12 @@ class KnapsackProblem:
     print('\nTotal Weight: {}kg'.format(weight))
     print('Total Value: ${}'.format(value))
       
-
-  
-
-    
+  @property
+  def solveProblem(self):
+    self.getKnapsackMaxWeight
+    self.createItems
+    self.showItems
+    self.setToolbox
+    self.setGenerations
+    self.bestOption
+    self.show

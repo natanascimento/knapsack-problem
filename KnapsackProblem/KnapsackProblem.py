@@ -57,5 +57,11 @@ class KnapsackProblem:
           ind.fitness.values = fit
       self.population = self.toolbox.select(offspring, k=len(self.population))
   
+  @property
+  def bestOption(self):
+    bests = tools.selBest(self.population, k=10)
+    self.best_option = bests[0]
+    return self.best_option
+  
 
     

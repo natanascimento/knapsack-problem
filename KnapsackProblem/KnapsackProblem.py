@@ -63,5 +63,15 @@ class KnapsackProblem:
     self.best_option = bests[0]
     return self.best_option
   
+  @property
+  def showItems(self):
+    print("------------ Items ------------")
+    for item in self.items:
+      print(item)
+      
+  @property
+  def getKnapsackMaxWeight(self):
+    print("Max Capacity of this Knapsack: {}kg".format(self.max_weight))
+      
 
     

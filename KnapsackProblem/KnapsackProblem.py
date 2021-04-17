@@ -48,3 +48,14 @@ class KnapsackProblem:
     self.toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
     self.toolbox.register("select", tools.selTournament, tournsize=3)
   
+  @property
+  def setGenerations(self):
+    for gen in range(self.lenght_generations):
+      offspring = alg.varAnd(self.population, self.toolbox, cxpb=0.5, mutpb=0.1)
+      fits = self.toolbox.map(self.toolbox.evaluate, offspring)
+      for fit, ind in zip(fits, offspring):
+          ind.fitness.values = fit
+      self.population = self.toolbox.select(offspring, k=len(self.population))
+  
+
+    

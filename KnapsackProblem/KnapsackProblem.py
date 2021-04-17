@@ -71,7 +71,7 @@ class KnapsackProblem:
       
   @property
   def getKnapsackMaxWeight(self):
-    print("Max Capacity of this Knapsack: {}kg".format(self.max_weight))
+    print("\nMax Capacity of this Knapsack: {}kg".format(self.max_weight))
     
   @property
   def show(self):

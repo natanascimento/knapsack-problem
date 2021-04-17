@@ -33,5 +33,18 @@ class KnapsackProblem:
         return 0,
     return value,
   
-
+  @property
+  def setToolbox(self):
+    creator.create("Fitness", base.Fitness, weights=(1.0,))
+    creator.create("Individual", list, fitness=creator.Fitness)
+    self.toolbox.register("attr_bool", random.randint, 0, 1)
+    self.toolbox.register("individual", tools.initRepeat, creator.Individual, self.toolbox.attr_bool, n=self.length_items)
+    self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual, n=self.lenght_generations)
     
+    self.population = self.toolbox.population()
+    
+    self.toolbox.register("evaluate", self.setFitness)
+    self.toolbox.register("mate", tools.cxTwoPoint)
+    self.toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
+    self.toolbox.register("select", tools.selTournament, tournsize=3)
+  

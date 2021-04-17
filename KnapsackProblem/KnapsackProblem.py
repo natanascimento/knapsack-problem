@@ -22,3 +22,16 @@ class KnapsackProblem:
                          "value": random.randint(1, self.max_price_items)})
     return self.items
   
+  def setFitness(self, individual):
+    weight = 0
+    value = 0
+    for index, item in enumerate(individual):
+        if item == 1:
+            weight += self.items[index]['weight']
+            value += self.items[index]['value']
+    if weight > self.max_weight:
+        return 0,
+    return value,
+  
+
+    

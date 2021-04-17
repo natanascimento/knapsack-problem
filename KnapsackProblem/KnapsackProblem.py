@@ -65,13 +65,29 @@ class KnapsackProblem:
   
   @property
   def showItems(self):
-    print("------------ Items ------------")
+    print("\n------------ Items ------------")
     for item in self.items:
       print(item)
       
   @property
   def getKnapsackMaxWeight(self):
     print("Max Capacity of this Knapsack: {}kg".format(self.max_weight))
+    
+  @property
+  def show(self):
+    print("\n------------ Result ------------")
+    weight = 0
+    value = 0
+    for index, item in enumerate(self.best_option):
+        if item == 1:
+            print(self.items[index])
+            weight += self.items[index]['weight']
+            value += self.items[index]['value']
+
+    print('\nTotal Weight: {}kg'.format(weight))
+    print('Total Value: ${}'.format(value))
       
+
+  
 
     

@@ -15,3 +15,10 @@ class KnapsackProblem:
     self.toolbox = base.Toolbox()
     self.best_option = 0
     
+  @property 
+  def createItems(self):
+    for i in range(self.length_items):
+      self.items.append({"weight": random.randint(1, self.max_weight_items), 
+                         "value": random.randint(1, self.max_price_items)})
+    return self.items
+  
